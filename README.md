@@ -10,4 +10,4 @@ how to use
 - chmod +x setup.sh
 - ./setup.sh
 
-Then make a symbolic link between ~/.vim and this directory
+Then make a symbolic link between ~/.vim and this directory.
