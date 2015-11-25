@@ -2,6 +2,7 @@
 syntax on
 " set -----------{{{
 set incsearch
+set hlsearch
 set hidden
 set fileformat=unix
 set nocompatible
@@ -29,7 +30,6 @@ set foldmethod=manual
 set nofoldenable
 set ai
 set si
-set nohlsearch
 set synmaxcol=250
 "}}}
 " let -------------{{{
@@ -78,6 +78,7 @@ call unite#custom#source('file_rec', 'ignore_pattern', 'coverage/\|node_modules/
 let mapleader = ","
 let maplocalleader = ",,"
 " normal mode -----------{{{
+nnoremap <esc> :nohlsearch
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :w:source $MYVIMRC
 nnoremap <leader>b :NERDTreeToggle<cr>
@@ -99,7 +100,6 @@ nnoremap <A-^> :A
 nnoremap <A-.> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>" Jump to lines with same indentation
 nnoremap <A-,> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 nnoremap <Space>p a<Space><Esc>p
-nnoremap <Esc> :set hlsearch! hlsearch?<cr>
 nnoremap zB :call <SID>CenterBlock()<cr>
 nnoremap zo za
 nnoremap zT  zt3k3j
@@ -132,7 +132,7 @@ nnoremap <leader>gs :Gstatus
 vnoremap <leader>' <Esc>`<i'<Esc>`>a'<Esc>hvi'
 vnoremap <leader>" <Esc>`<i"<Esc>`>a"<Esc>hvi"
 vnoremap <leader>/ y/"
-:set hlsearch
+vnoremap <leader>y "+y
  " find all occuences
 "}}}
 " 
@@ -166,6 +166,8 @@ augroup sidekick
   autocmd BufLeave */sidekick/*.js set tabstop=2
   autocmd BufLeave */sidekick/*.js set shiftwidth=2
   autocmd BufLeave */sidekick/*.js set expandtab
+
+  autocmd BufEnter */sidekick/*.less command! PeakVars execute "vsplit /home/bmiller/workspace/git/sidekick/weblib/WebContent/weblib/lib/bootstrap/theme-social-light/variables.less"
 
 augroup END
 
