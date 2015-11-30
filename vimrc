@@ -133,6 +133,7 @@ vnoremap <leader>' <Esc>`<i'<Esc>`>a'<Esc>hvi'
 vnoremap <leader>" <Esc>`<i"<Esc>`>a"<Esc>hvi"
 vnoremap <leader>/ y/"
 vnoremap <leader>y "+y
+vnoremap <leader>p "+p
  " find all occuences
 "}}}
 " 
