@@ -24,13 +24,14 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set guifont="WenQuanYi Micro Hei Mono":8,Consolas:h9:cANSI "set font
-set listchars=tab:\|.,trail:-,extends:>,precedes:<,nbsp:-
-set list
+set listchars=tab:\|.,trail:-,extends:>,precedes:<,nbsp:- "whitespace characters
+set list "turn whitespace characters on
 set foldmethod=manual
 set nofoldenable
 set ai
 set si
 set synmaxcol=250
+set backspace=2 "make backspace work on all text
 "}}}
 " let -------------{{{
 let g:session_autosave = 'no'
