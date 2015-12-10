@@ -25,7 +25,7 @@ set shiftwidth=2
 set expandtab
 set guifont="WenQuanYi Micro Hei Mono":8,Consolas:h9:cANSI "set font
 set listchars=tab:\|.,trail:-,extends:>,precedes:<,nbsp:- "whitespace characters
-set list "turn whitespace characters on
+set nolist "turn whitespace characters off
 set foldmethod=manual
 set nofoldenable
 set ai
@@ -79,7 +79,7 @@ call unite#custom#source('file_rec', 'ignore_pattern', 'coverage/\|node_modules/
 let mapleader = ","
 let maplocalleader = ",,"
 " normal mode -----------{{{
-nnoremap <esc> :nohlsearch
+"nnoremap <localleader>c :nohlsearch
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :w:source $MYVIMRC
 nnoremap <leader>b :NERDTreeToggle<cr>
