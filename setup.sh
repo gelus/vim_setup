@@ -12,7 +12,6 @@ declare -a packages=(
 "https://github.com/tomtom/tlib_vim.git"                 # utility functions
 "https://github.com/Shougo/unite.vim.git"                # UNITE, awesome lots of things
 "https://github.com/MarcWeber/vim-addon-mw-utils.gitj"   # utility lib
-"https://github.com/burnettk/vim-angular.git"            # some nice angular things
 "https://github.com/gelus/vim-buffer-enhancement.git"    # buffer number mapping
 "https://github.com/skammer/vim-css-color.git"           # css color preview
 "https://github.com/easymotion/vim-easymotion.git"       # vim motions on crack
