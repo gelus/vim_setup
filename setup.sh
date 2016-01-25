@@ -20,6 +20,7 @@ declare -a packages=(
 "https://github.com/groenewege/vim-less.git"             # syntax highlighting for less
 "https://github.com/garbas/vim-snipmate.git"             # snippets system!
 "https://github.com/honza/vim-snippets.git"              # snippets for snipmate
+"https://github.com/Shougo/vimshell.vim.git"             # run a shell in a vim buffer
 )
 
 # clean existing bundles 
