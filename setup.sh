@@ -21,6 +21,7 @@ declare -a packages=(
 "https://github.com/garbas/vim-snipmate.git"             # snippets system!
 "https://github.com/honza/vim-snippets.git"              # snippets for snipmate
 "https://github.com/Shougo/vimshell.vim.git"             # run a shell in a vim buffer
+"https://github.com/MarcWeber/vim-addon-mw-utils.git"    # util for snipmate
 )
 
 # clean existing bundles 
