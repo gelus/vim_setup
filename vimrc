@@ -85,7 +85,6 @@ nnoremap <leader>sv :w:source $MYVIMRC
 nnoremap <leader>b :NERDTreeToggle<cr>
 nnoremap <leader>ts :syntax off<cr>:syntax on<cr>
 nnoremap <leader>/ yiw/"
-nnoremap <leader>lf :LocateFile<cr>
 nnoremap <leader>p "+p
 nnoremap <localleader>j :lne<cr>
 nnoremap <localleader>k :lp<cr>
