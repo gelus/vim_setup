@@ -1,3 +1,7 @@
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
+
 "Ben's Settings -----------------{{{
 syntax on
 " set -----------{{{
@@ -105,8 +109,9 @@ nnoremap zo za
 nnoremap zT  zt3k3j
 nnoremap ' `
 nnoremap <A-'> '
+nnoremap <A-S-L> 20zl
 nnoremap <A-l> zl
-nnoremap <A-l> 20zl
+nnoremap <A-S-H> 20zh
 nnoremap <A-h> zh
 nnoremap <A-k> 
 nnoremap <A-j> 
