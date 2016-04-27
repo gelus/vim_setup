@@ -1,9 +1,10 @@
-if $TERM == "xterm-256color"
+"if $TERM == "xterm-256color"
   set t_Co=256
-endif
+"endif
 
 "Ben's Settings -----------------{{{
 syntax on
+colorscheme monokai
 " set -----------{{{
 set incsearch
 set hlsearch
@@ -27,7 +28,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set guifont="WenQuanYi Micro Hei Mono":8,Consolas:h9:cANSI "set font
 set listchars=tab:\|.,trail:-,extends:>,precedes:<,nbsp:- "whitespace characters
 set nolist "turn whitespace characters off
 set foldmethod=manual
@@ -45,7 +45,6 @@ let NERDCompactSexyComs = 1 "enable compact 'sexy' commets for NERDcomments
 "}}}
 " various ------------------{{{
 execute pathogen#infect()
-colorscheme monokai
 runtime macros/matchit.vim
 filetype plugin on
 filetype indent on 
@@ -83,44 +82,55 @@ call unite#custom#source('file_rec', 'ignore_pattern', 'coverage/\|node_modules/
 let mapleader = ","
 let maplocalleader = ",,"
 " normal mode -----------{{{
-"nnoremap <localleader>c :nohlsearch
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :w:source $MYVIMRC
-nnoremap <leader>b :NERDTreeToggle<cr>
-nnoremap <leader>ts :syntax off<cr>:syntax on<cr>
-nnoremap <leader>/ yiw/"
-nnoremap <leader>p "+p
-nnoremap <localleader>j :lne<cr>
-nnoremap <localleader>k :lp<cr>
-nnoremap <localleader>J :llast<cr>
-nnoremap <localleader>K :lfirst<cr>
+" Terminal Alt mapping.
+nnoremap , :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+nnoremap . :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>" Jump to lines with same indentation
+nnoremap H 20zh
+nnoremap J 20<C-E>
+nnoremap K 20<C-Y>
+nnoremap L 20zl
+nnoremap ^ :A
+nnoremap h zh
+nnoremap j 
+nnoremap j <C-E>
+nnoremap k 
+nnoremap k <C-Y>
+nnoremap l zl
+nnoremap ' `
+nnoremap <A-,> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+nnoremap <A-.> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>" Jump to lines with same indentation
+nnoremap <A-S-H> 20zh
+nnoremap <A-S-L> 20zl
+nnoremap <A-^> :A
+nnoremap <A-h> zh
+nnoremap <A-j> 
+nnoremap <A-j> <C-E>
+nnoremap <A-k> 
+nnoremap <A-k> <C-Y>
+nnoremap <A-l> zl
 nnoremap <C-j> m` j"_dd`` " delete line below
 nnoremap <C-k> m` k"_dd`` "delete line above
-nnoremap <A-S-j> ddp
-nnoremap <A-S-k> ddkP
-nnoremap <A-k> <C-Y>
-nnoremap <A-j> <C-E>
-nnoremap <A-^> :A
-nnoremap <A-.> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>" Jump to lines with same indentation
-nnoremap <A-,> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 nnoremap <Space>p a<Space><Esc>p
+nnoremap <leader>/ yiw/"
+nnoremap <leader>b :NERDTreeToggle<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>p "+p
+nnoremap <leader>sv :w:source $MYVIMRC
+nnoremap <leader>ts :syntax off<cr>:syntax on<cr>
+nnoremap <localleader>J :llast<cr>
+nnoremap <localleader>K :lfirst<cr>
+nnoremap <localleader>j :lne<cr>
+nnoremap <localleader>k :lp<cr>
 nnoremap zB :call <SID>CenterBlock()<cr>
-nnoremap zo za
 nnoremap zT  zt3k3j
-nnoremap ' `
-nnoremap <A-'> '
-nnoremap <A-S-L> 20zl
-nnoremap <A-l> zl
-nnoremap <A-S-H> 20zh
-nnoremap <A-h> zh
-nnoremap <A-k> 
-nnoremap <A-j> 
+nnoremap zo za
 
 " Unite -----------------{{{
 nnoremap <leader>q :Unite -start-insert file_rec<cr>
 nnoremap <leader>Q :Unite -start-insert file<cr>
 nnoremap <A-p> :Unite history/yank<cr>
 nnoremap <A-6> :Unite -start-insert buffer<cr>
+nnoremap 6 :Unite -start-insert buffer<cr>
 
 nnoremap <leader>gj :Unite grep:WebContent/js
 nnoremap <leader>gp :Unite grep:WebContent/partials
@@ -225,13 +235,13 @@ endfunction
 
 "Ben's Statusline ----------------------{{{
 
-hi User1 guifg=#F92672 guibg=#3E3D32    "status line red
-hi User2 guifg=#66D9EF guibg=#3E3D32    "status line blue
-hi User3 guifg=#E6DB74 guibg=#3E3D32    "status line yellow
-hi User4 guifg=#75715E guibg=#3E3D32    "status line grey
-hi User5 guifg=#FD971E guibg=#3E3D32    "status line orange
-hi User6 guifg=#A6E22E guibg=#3E3D32    "status line green
-hi User7 guifg=#AE81FF guibg=#3E3D32    "status line purple
+hi User1 ctermfg=1  ctermbg=14 guifg=#F92672 guibg=#3E3D32    "status line red
+hi User2 ctermfg=4  ctermbg=14 guifg=#66D9EF guibg=#3E3D32    "status line blue
+hi User3 ctermfg=3  ctermbg=14 guifg=#E6DB74 guibg=#3E3D32    "status line yellow
+hi User4 ctermfg=9  ctermbg=14 guifg=#75715E guibg=#3E3D32    "status line grey
+hi User5 ctermfg=6  ctermbg=14 guifg=#FD971E guibg=#3E3D32    "status line orange
+hi User6 ctermfg=2  ctermbg=14 guifg=#A6E22E guibg=#3E3D32    "status line green
+hi User7 ctermfg=13 ctermbg=14 guifg=#AE81FF guibg=#3E3D32    "status line purple
 
 set laststatus=2
 set statusline=
