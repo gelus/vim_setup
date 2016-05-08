@@ -19,53 +19,52 @@ hi CursorLine   ctermfg=NONE ctermbg=5    cterm=NONE guifg=NONE    guibg=#181814
 hi Directory    ctermfg=4    ctermbg=NONE cterm=NONE guifg=#66D9EF gui=none
 hi DiffAdd      ctermfg=NONE ctermbg=2    cterm=NONE guifg=bg      guibg=#A6E22E
 hi DiffChange   ctermfg=NONE ctermbg=3    cterm=NONE guifg=bg      guibg=#f4bf75
-hi DiffDelete   ctermfg=NONE ctermbg=4    cterm=NONE guifg=bg      guibg=#F92672
+hi DiffDelete   ctermfg=NONE ctermbg=1    cterm=NONE guifg=bg      guibg=#F92672
 hi DiffText     ctermfg=0    ctermbg=3    cterm=NONE guifg=bg      guibg=#f4bf75
 hi ErrorMsg     ctermfg=1    ctermbg=0    cterm=NONE guifg=#F92672 guibg=bg gui=none
-hi VertSplit    ctermfg=8    ctermbg=0    cterm=NONE guifg=#3E3D32 guibg=bg gui=none
+hi VertSplit    ctermfg=8    ctermbg=0    cterm=NONE guifg=#75715E guibg=bg gui=none
 hi Folded       ctermfg=8    ctermbg=0    cterm=NONE guifg=#75715E guibg=bg gui=none
-hi FoldColumn   ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#181814 gui=none
-hi SignColum    ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#181814 gui=none
+hi FoldColumn   ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3e3d32 gui=none
+hi SignColum    ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3e3d32 gui=none
 hi IncSearch    ctermfg=0    ctermbg=13   cterm=NONE guifg=bg      guibg=#AE81ff gui=none
-hi LineNr       ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#181814 gui=none
-hi MatchParen   ctermfg=4    ctermbg=5    cterm=BOLD guifg=bg      guibg=#AE81ff gui=bold
-hi ModeMsg      ctermfg=13   ctermbg=0    cterm=NONE guifg=bg      guibg=#AE81ff gui=none
+hi LineNr       ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3E3D32 gui=none
+hi MatchParen   ctermfg=4    ctermbg=5    cterm=BOLD guifg=#66D9ef guibg=#181814 gui=bold
+hi ModeMsg      ctermfg=13   ctermbg=0    cterm=NONE guifg=#AE81ff guibg=#272822 gui=none
 hi MoreMsg      ctermfg=4    ctermbg=NONE cterm=NONE guifg=#66D9EF guibg=NONE gui=none
-hi NonText      ctermfg=8    ctermbg=NONE cterm=NONE guifg=#3E3D32 guibg=NONE gui=none
-hi Pmenu        ctermfg=7    ctermbg=14   cterm=NONE guifg=fg      guibg=#181814
-hi PmenuSel     ctermfg=2    ctermbg=NONE   cterm=NONE guifg=fg      guibg=bg
-hi PmenuSbar    ctermfg=NONE ctermbg=0    cterm=NONE               guibg=bg
-hi PmenuThumb   ctermfg=8    ctermbg=NONE cterm=NONE guifg=fg
+hi NonText      ctermfg=8    ctermbg=NONE cterm=NONE guifg=#75715E guibg=NONE gui=none
+hi Pmenu        ctermfg=7    ctermbg=14   cterm=NONE guifg=#c0c0c0 guibg=#3e3d32
+hi PmenuSel     ctermfg=2    ctermbg=NONE cterm=NONE guifg=#a6e22e guibg=NONE
+hi PmenuSbar    ctermfg=NONE ctermbg=0    cterm=NONE guifg=NONE    guibg=#272822
+hi PmenuThumb   ctermfg=8    ctermbg=NONE cterm=NONE guifg=#75717E
 hi Question     ctermfg=2    ctermbg=NONE cterm=NONE guifg=#A6E22E gui=none
-hi Search       ctermfg=0    ctermbg=13   cterm=NONE guifg=bg      guibg=#AE81ff gui=none
-hi SpecialKey   ctermfg=8    ctermbg=NONE cterm=NONE guifg=#181814 gui=none
+hi Search       ctermfg=0    ctermbg=13   cterm=NONE guifg=#272822 guibg=#AE81ff gui=none
+hi SpecialKey   ctermfg=8    ctermbg=NONE cterm=NONE guifg=#75715E gui=none
 hi SpellBad     ctermbg=1    guisp=#F92672
 hi SpellCap     ctermbg=4    guisp=#66D9EF
 hi SpellRare    ctermbg=13   guisp=#AE81FF
-hi StatusLine   ctermfg=8    ctermbg=14   cterm=NONE guifg=fg      guibg=#3E3D32 gui=none
-hi StatusLineNC ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#181814 gui=none
-hi TabLine      ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#181814 gui=none
-hi TabLineFill  ctermfg=8    ctermbg=14   cterm=NONE guifg=fg      guibg=#181814 gui=none
-hi TabLineSel   ctermfg=8    ctermbg=14   cterm=NONE guifg=fg      guibg=#181814 gui=none
+hi StatusLine   ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3E3D32 gui=none
+hi StatusLineNC ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3E3D32 gui=none
+hi TabLine      ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3E3D32 gui=none
+hi TabLineFill  ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3E3D32 gui=none
+hi TabLineSel   ctermfg=8    ctermbg=14   cterm=NONE guifg=#75715E guibg=#3E3D32 gui=none
 hi Title        ctermfg=1    ctermbg=NONE cterm=NONE guifg=#F92672 gui=none
-hi Visual       ctermfg=NONE ctermbg=14   cterm=NONE guibg=#181814 gui=none
+hi Visual       ctermfg=NONE ctermbg=14   cterm=NONE guifg=NONE    guibg=#3e3d32 gui=none
 hi WarningMsg   ctermfg=1    ctermbg=NONE cterm=NONE guifg=#F92672 gui=none
 
 " Plugin specific highlight groups
-hi MyTagListFileName ctermfg=13ctermbg=0 cterm=NONE guifg=#181814 guibg=bg gui=none
+hi MyTagListFileName ctermfg=13 ctermbg=0 cterm=NONE guifg=#3e3d32 guibg=#272822 gui=none
 
 " Color groups
-hi Blue    ctermfg=4  cterm=NONE guifg=#66D9EF gui=none
-hi Green   ctermfg=2  cterm=NONE guifg=#A6E22E gui=none
-hi Grey    ctermfg=8  cterm=NONE guifg=#75715E gui=none
-hi Orange  ctermfg=6  cterm=NONE guifg=#FD971F gui=none
-hi Purple  ctermfg=13 cterm=NONE guifg=#AE81FF gui=none
 hi Red     ctermfg=1  cterm=NONE guifg=#F92672 gui=none
-hi White   ctermfg=15 cterm=NONE guifg=#F8F8F2 gui=none
+hi Green   ctermfg=2  cterm=NONE guifg=#A6E22E gui=none
 hi Yellow  ctermfg=3  cterm=NONE guifg=#f4bf75  gui=none
+hi Blue    ctermfg=4  cterm=NONE guifg=#66D9EF gui=none
+hi Orange  ctermfg=6  cterm=NONE guifg=#FD971F gui=none
+hi Grey    ctermfg=8  cterm=NONE guifg=#75715E gui=none
+hi White   ctermfg=7  cterm=NONE guifg=#c0c0c0 gui=none
+hi Purple  ctermfg=13 cterm=NONE guifg=#AE81FF gui=none
 
 hi BlueU   ctermfg=4 cterm=underline guifg=#66D9EF gui=underline
-
 hi RedR    ctermfg=15 ctermbg=1 cterm=NONE guifg=fg guibg=#F92672 gui=none
 hi YellowR ctermfg=0  ctermbg=3 cterm=NONE guifg=bg guibg=#FD971F gui=none
 
