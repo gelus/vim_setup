@@ -22,7 +22,7 @@ declare -a packages=(
 "https://github.com/honza/vim-snippets.git"              # snippets for snipmate
 "https://github.com/Shougo/vimshell.vim.git"             # run a shell in a vim buffer
 "https://github.com/MarcWeber/vim-addon-mw-utils.git"    # util for snipmate
-"git clone https://github.com/Shougo/vimproc.vim.git"    # util for Unite
+"https://github.com/Shougo/vimproc.vim.git"    # util for Unite
 "https://github.com/tpope/vim-projectionist.git"         # Custom Alternate File switching
 )
 
