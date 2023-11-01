@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/c/Users/benjamin.miller/.vim/bundle'
+let g:netrw_dirhist_7='/c/Users/benjamin.miller/.vim'
 let g:netrw_dirhist_6='/c/Users/benjamin.miller/workspace/iapro/src/app/Search/search'
 let g:netrw_dirhist_5='/c/Users/benjamin.miller/workspace/iapro/src/app/Search'
 let g:netrw_dirhist_4='/c/Users/benjamin.miller/workspace/iapro/src/app'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_2='/c/Users/benjamin.miller/workspace/iapro/src/app'
 let g:netrw_dirhist_1='/c/Users/benjamin.miller/workspace/iapro/src/app/Category'
 let g:netrw_dirhist_0='/c/Users/benjamin.miller/workspace/iapro/src/app/Category/category-node'
 let g:netrw_dirhist_9='/c/Users/benjamin.miller/workspace/iapro/src/app/Shared/side-slider'
-let g:netrw_dirhist_8='/c/Users/benjamin.miller/workspace/iapro/src/app/Shared'
-let g:netrw_dirhist_7='/c/Users/benjamin.miller/workspace/iapro/src/app'
