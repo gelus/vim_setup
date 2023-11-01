@@ -1,18 +1,28 @@
-"if $TERM == "xterm-256color"
-  set t_Co=256
-"endif
+set guifont=Lucida_Console:h11
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
+let mapleader = ","
+let maplocalleader = ",,"
 
 "Ben's Settings -----------------{{{
 syntax on
 colorscheme monokai
+
+set termguicolors
 " set -----------{{{
+set wildmode=longest,list,full
+set wildmenu
+set shortmess-=S
+set path+=**
+set diffopt=vertical
 set incsearch
 set hlsearch
 set hidden
 set fileformat=unix
 set nocompatible
 set noswapfile
-set lazyredraw "attempting to fix laggy cursor movement.
+"set lazyredraw "attempting to fix laggy cursor movement.
 set numberwidth=3
 set go-=m      "remove menu
 set go-=T      "remove Toolbar
@@ -59,146 +69,76 @@ filetype indent on
 map <space> <Plug>(easymotion-prefix)
 "}}} 
 
-" vim-angular ------------------{{{
-let g:angular_source_directory = 'WebContent/js'
-let g:angular_filename_convention = 'titlecased'
+" snipMate  ------------------{{{
+let g:snipMate = { 'snippet_version' : 1 }
 "}}} 
 
-" Syntastic ------------------{{{
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
 "}}}
-" Unite ------------------{{{
-let g:unite_source_history_yank_enable = 1 "turn on Unite yank history
-let g:unite_source_rec_max_cache_files = 9000
-call unite#custom#source('file_rec', 'ignore_pattern', 'coverage/\|node_modules/\|WebContent/temp/\|WebContent/dist')
-"}}} 
+
+"netrw stuff ---------{{{
+let g:netrw_altfile = 1
+let t:previouslyOpened = 0
+nnoremap <leader>b :call ToggleRex()<cr>
+
+
+function ToggleRex()
+  let f=bufnr()
+
+  if !t:previouslyOpened
+    let t:previouslyOpened = 1
+    Explore
+  else
+    Rexplore
+  endif
+
+  let @#=f
+endfunction
 
 "}}}
 
 "Ben's Mappings ------------------{{{
-let mapleader = ","
-let maplocalleader = ",,"
 " normal mode -----------{{{
 " Terminal Alt mapping.
-nnoremap , :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
-nnoremap . :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>" Jump to lines with same indentation
-nnoremap H 20zh
-nnoremap J 20<C-E>
-nnoremap K 20<C-Y>
-nnoremap L 20zl
-nnoremap ^ :A
-nnoremap h zh
-nnoremap j 
-nnoremap j <C-E>
-nnoremap k 
-nnoremap k <C-Y>
-nnoremap l zl
 nnoremap ' `
-nnoremap <A-,> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
-nnoremap <A-.> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>" Jump to lines with same indentation
-nnoremap <A-S-H> 20zh
-nnoremap <A-S-L> 20zl
-nnoremap <A-^> :A
-nnoremap <A-h> zh
-nnoremap <A-j> 
-nnoremap <A-j> <C-E>
-nnoremap <A-k> 
-nnoremap <A-k> <C-Y>
-nnoremap <A-l> zl
-nnoremap <C-j> m` j"_dd`` " delete line below
-nnoremap <C-k> m` k"_dd`` "delete line above
+nnoremap <C-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+nnoremap <C-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 nnoremap <Space>p a<Space><Esc>p
-nnoremap <leader>/ yiw/"
-nnoremap <leader>b :NERDTreeToggle<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :w:source $MYVIMRC<cr>
 nnoremap <leader>p "+p
-nnoremap <leader>sv :w:source $MYVIMRC
-nnoremap <leader>ts :syntax off<cr>:syntax on<cr>
 nnoremap <localleader>J :llast<cr>
 nnoremap <localleader>K :lfirst<cr>
 nnoremap <localleader>j :lne<cr>
 nnoremap <localleader>k :lp<cr>
-nnoremap zB :call <SID>CenterBlock()<cr>
-nnoremap zT  zt3k3j
-nnoremap zo za
-
-" Unite -----------------{{{
-nnoremap <leader>q :Unite -start-insert file_rec<cr>
-nnoremap <leader>Q :Unite -start-insert file<cr>
-nnoremap <A-p> :Unite history/yank<cr>
-nnoremap <A-6> :Unite -start-insert buffer<cr>
-nnoremap 6 :Unite -start-insert buffer<cr>
-
-nnoremap <leader>gj :Unite grep:WebContent/js
-nnoremap <leader>gp :Unite grep:WebContent/partials
-nnoremap <leader>gl :Unite grep:WebContent/less
-nnoremap <leader>gt :Unite grep:test/unit
-" }}}
 
 " Fugitive -----------------{{{
-nnoremap <leader>gs :Gstatus
+nnoremap <leader>gs :Git
 " }}}
 
 "}}}
 " visual mode ---------------------{{{
-vnoremap <leader>' <Esc>`<i'<Esc>`>a'<Esc>hvi'
-vnoremap <leader>" <Esc>`<i"<Esc>`>a"<Esc>hvi"
-vnoremap <leader>/ y/"
+vnoremap <leader>' <Esc>`>a'<Esc>`<i'<Esc>
+vnoremap <leader>" <Esc>`>a"<Esc>`<i"<Esc>
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
- " find all occuences
 "}}}
 " 
 inoremap jk 
 inoremap ;; <Esc>vvA;<Esc>`<a
 inoremap ,, <Esc>vvA,<Esc>`<a
-inoremap <C-u> <Esc>viw~ea
 "}}}
 
 " command mode -----------------{{{
-cnoremap <A-h> <S-Left>
-cnoremap <A-l> <S-Right>
-cnoremap <C-h> <Left>
-cnoremap <C-l> <Right>
 "}}}
 
 "Ben's Commands ------------------{{{
-  command! Cclose execute "copen | cex [] | cclose"
+  command! FormatJson execute "set filetype=json | %!python -m json.tool"
 " }}}
 
 "Ben's Abbrevieation ----------------------{{{
-iab sco $scope
 "}}}
 
 "Ben's AutoCommands ----------------{{{
-augroup sidekick
-  autocmd!
-  autocmd BufEnter */sidekick/*.js set tabstop=4
-  autocmd BufEnter */sidekick/*.js set shiftwidth=4
-  autocmd BufEnter */sidekick/*.js set expandtab
-  autocmd BufLeave */sidekick/*.js set tabstop=2
-  autocmd BufLeave */sidekick/*.js set shiftwidth=2
-  autocmd BufLeave */sidekick/*.js set expandtab
-
-  autocmd BufEnter */sidekick/*.less command! PeakVars execute "vsplit /home/bmiller/workspace/git/sidekick/weblib/WebContent/weblib/lib/bootstrap/theme-social-light/variables.less"
-
-augroup END
-
-augroup javascript
-  autocmd!
-  autocmd Filetype javascript nnoremap <leader>db :<c-u>call <SID>JsDebugger()<cr>
-augroup END
-
-augroup html
-  autocmd!
-augroup END
-
-augroup css
-  autocmd!
-augroup END
 
 " vimscript augroup -----------------{{{
 augroup filetype_vim
@@ -211,26 +151,6 @@ augroup END
 "}}}
 
 "Ben's Functions ----------------{{{
-
-function! s:CenterBlock()
-  execute "normal! viBv"
-  let startLine = line("'<")
-  let endLine = line("'>")
-  let toMiddle = (endLine-startLine)/2
-  execute "normal! ".toMiddle."kzz'<k$"
-endfunction 
-
-function! s:JsDebugger()
-  let l:saveUnamedReg = @@
-  execute "normal! yy"
-  let matchs = matchstr(@@, '^\s*debugger;\s*\n')
-  if empty(matchs) 
-    execute "normal! odebugger;_"
-  else
-    execute "normal! ddk_"
-  endif
-  let @@ = l:saveUnamedReg
-endfunction 
 "}}}
 
 "Ben's Statusline ----------------------{{{
@@ -247,7 +167,6 @@ set laststatus=2
 set statusline=
 set statusline+=%2*%t\ %y%*                             " filename, filetype
 set statusline+=%1*%m%r%w%*                             " flags colored red
-set statusline+=%1*%{SyntasticStatuslineFlag()}%*       " syntastic lint warning
 set statusline+=%=                                      " right aligned stuf
 set statusline+=%5*%1.(\ %{fugitive#statusline()}\ %)%* " fugitive (git) status line
 set statusline+=%6*%c%4*:%6*%l%4*/%6*%L\                " column:line out of lines
